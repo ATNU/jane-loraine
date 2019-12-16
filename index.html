@@ -32,6 +32,20 @@ function myFunction3() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+function selectFromGI(section) {
+	//todo query xml inserted into iframe so that only chosen section is displayed
+
+//	get contents of iframe
+	const iframe = document.getElementById('iframe_main');
+
+	//get selected element
+	const section = iframe.contentWindow.document.getElementsBy
+}
+
+
+
+
 </script>
     </head>
     <body style="background: url(docs/Loraine28V.jpg); background-repeat: no-repeat; background-size: 100vw 100vh;"><!--class="w3-ana-instrument-black"-->
@@ -43,13 +57,18 @@ function myFunction3() {
             <header class="w3-container w3-hide-medium w3-hide-large w3-opacity w3-ana-instrument-black">
                 <div style="opacity: 1"><h5 class="w3-text-sand">Jane Loraine's Recipe Book <small>(c.1684)</small></h5></div>
             </header>
+
+
             <!--navigation-->
+
+
 			<div class="w3-bar w3-ana-navy-blue w3-large">
 				<a href="#" class="w3-bar-item w3-button w3-hover-vivid-bluish-green"><i class="fa fa-home"></i></a>
+
 				<div class="w3-dropdown-hover w3-hide-small">
 					<button class="w3-button w3-hover-safety-blue">General Introduction <small>&#9660;</small></button>
-					<div class="w3-dropdown-content w3-bar-block w3-card-4">
-						<a href="#" class="w3-bar-item w3-button w3-hover-safety-blue">Overview</a>
+					<div class="w3-dropdown-content w3-bar-block w3-card-4" >
+						<a href="#" onclick="selectFromGI('Overview')" class="w3-bar-item w3-button w3-hover-safety-blue">Overview</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-safety-blue">Content &amp; Significance</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-safety-blue">Mystery of Jane Loraine</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-safety-blue">Summary of the Critical Field</a>
@@ -58,7 +77,7 @@ function myFunction3() {
 				</div>
 				<div class="w3-dropdown-hover w3-hide-small">
 					<button class="w3-button w3-hover-ana-azure-blue">Textual Introduction <small>&#9660;</small></button>
-					<div class="w3-dropdown-content w3-bar-block w3-card-4">
+					<div class="w3-dropdown-content w3-bar-block w3-card-4" onclick="selectFromTI()">
 						<a href="#" class="w3-bar-item w3-button w3-hover-ana-azure-blue">Overview</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-ana-azure-blue">The Manuscript</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-ana-azure-blue">Methodology</a>
@@ -74,7 +93,7 @@ function myFunction3() {
 			</div>
 			<div id="dropmenu" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-small">
 				<div class="w3-dropdown-hover w3-black">
-					<button class="w3-button w3-hover-safety-blue" onclick="myFunction2()">General Introduction <span style="padding-left: 10px">&#9776;</span></button>
+					<button class="w3-button w3-hover-safety-blue" onclick="selectFromGI()">General Introduction <span style="padding-left: 10px">&#9776;</span></button>
 					<div id="submenuGI" class="w3-dropdown-content w3-bar-block w3-card-4 w3-hide">
 						<a href="#" onclick="" class="w3-bar-item w3-button w3-hover-safety-blue">Overview</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-safety-blue">Content &amp; Significance</a>
@@ -84,7 +103,7 @@ function myFunction3() {
 					</div>
 				</div>
 				<div class="w3-dropdown-hover w3-black">
-					<button class="w3-button w3-hover-ana-azure-blue" onclick="myFunction3()">Textual Introduction <span style="padding-left: 10px">&#9776;</span></button>
+					<button class="w3-button w3-hover-ana-azure-blue" onclick="selectFromTI()">Textual Introduction <span style="padding-left: 10px">&#9776;</span></button>
 					<div id="submenuTI" class="w3-dropdown-content w3-bar-block w3-card-4 w3-hide">
 						<a href="#" class="w3-bar-item w3-button w3-hover-ana-azure-blue">Overview</a>
 						<a href="#" class="w3-bar-item w3-button w3-hover-ana-azure-blue">The Manuscript</a>
@@ -115,7 +134,7 @@ function myFunction3() {
 
                 <!--right panel container (large screens)-->
                 <div class="w3-third w3-padding-small w3-hide-small">
-                     <img border="0" src="Loraine6V.jpg" width="97%"/>
+                     <img border="0" src="docs/Loraine6V.jpg" width="97%"/>
                 </div>
                 <!--end of right panel container-->
 
