@@ -24,11 +24,15 @@
                    if (type.indexOf("text") !== 1) {
                        const xmlString = request.responseText.toString();
 
-                       // replace 'xml:id' with 'id'
+                       // replace 'xml:id' with 'id' (required for scrolling to different locations)
                        const xmlReplaced = xmlString.replace(/xml:id/g, 'id');
 
+                       // replace tei ref tag with html link tag
+                       const xmlReplaced2 = xmlReplaced.replace(/<ref/g, '<a');
+                       const xmlReplaced3 = xmlReplaced2.replace(/target=/g, 'href=');
+
                        // display
-                       $(xmlPanel).append(xmlReplaced);
+                       $(xmlPanel).append(xmlReplaced3);
                    }
                }
            };
