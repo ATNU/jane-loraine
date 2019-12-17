@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/schematron"?>
+        schematypens="http://purl.oclc.org/dsdl/schematron"?>s
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -1155,7 +1155,7 @@
             </text>
             <text type="digital_edition" xml:id="digital_edition">
                 <front>
-                    <div type="recipe_index" xml:id="recipe_index">
+                    <div type="recipe_index"   xml:id="recipe_index">
                         <head>Recipe Index</head>
                         <list type="recipes">
                             <item xml:id="recipe-1-index" resp="#JWM6885">
@@ -1163,7 +1163,7 @@
                                 [type: <desc>culinary</desc>; editor: James McCoull]
                                 <link target="#recipe-1-index #recipe-1-text"/>
                             </item>
-                            <item xml:id="recipe-2-index" resp="#JWM6885">
+                            <item xml:id="recipe-2-index"  resp="#JWM6885">
                                 <ref target="#recipe-2-text"><title type="recipe">2. Another sort</title></ref>
                                 [type: <desc>culinary</desc>; editor: James McCoull]
                                 <link target="#recipe-2-index #recipe-2-text"/>
@@ -1785,7 +1785,7 @@
                             </item>
                         </list>
                     </div>
-                    <div type="contents" xml:id="contents">
+                    <div type="contents"  xml:id="contents">
                         <head>The Contents Page</head>
                         <pb n="f.1r" facs="1r.png"/>
                         <cb n="1"/>
@@ -1943,7 +1943,7 @@
                     </div>
                 </front>
                 <body>
-                    <div type="recipe_texts" xml:id="recipe_texts">
+                    <div type="recipe_texts"  xml:id="recipe_texts">
                         <head>The Recipes</head>
                         <div type="recipe_texts" xml:id="recipe_texts_2017">
                             <div type="recipe" n="1" resp="#JWM6885">

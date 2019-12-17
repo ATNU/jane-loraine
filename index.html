@@ -13,13 +13,26 @@
 
 
        $(document).ready(function () {
-           $('#xmlPanel').load('2018_combined.xml');
+
+           // read text from URL location
+           var request = new XMLHttpRequest();
+           request.open('GET', '2018_combined.xml', true);
+           request.send(null);
+           request.onreadystatechange = function () {
+               if (request.readyState === 4 && request.status === 200) {
+                   var type = request.getResponseHeader('Content-Type');
+                   if (type.indexOf("text") !== 1) {
+                       const xmlString = request.responseText.toString();
+
+                       // replace 'xml:id' with 'id'
+                       const xmlReplaced = xmlString.replace(/xml:id/g, 'id');
+
+                       // display
+                       $(xmlPanel).append(xmlReplaced);
+                   }
+               }
+           };
        });
-
-       function displayOverview() {
- $().scroll();
-
-       }
 
 
 
@@ -39,11 +52,11 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="#" onclick="displayOverview()">Overview</a>
-                <a href="#">Content & Significance</a>
-                <a href="#">Mystery of Jane Loraine</a>
-                <a href="#">Summary of the Critical Field</a>
-                <a href="#">Historical Content</a>
+                <a href="#general_introduction_overview" >Overview</a>
+                <a href="#content">Content & Significance</a>
+                <a href="#author">Mystery of Jane Loraine</a>
+                <a href="#critical_field">Summary of the Critical Field</a>
+                <a href="#historical_context">Historical Content</a>
             </div>
         </div>
         <div class="dropdown">
@@ -51,17 +64,17 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="#">Overview</a>
-                <a href="#">The Manuscript</a>
-                <a href="#">Methodology</a>
-                <a href="#">Transcript Conventions</a>
-                <a href="#">Rationale for Annotation</a>
+                <a href="#textual_introduction_overview">Overview</a>
+                <a href="#manuscript">The Manuscript</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#transcription_conventions">Transcript Conventions</a>
+                <a href="#annotation">Rationale for Annotation</a>
             </div>
         </div>
-        <a href="#home">Index</a>
-        <a href="#news">Recipe Book</a>
-        <a href="#news">Edition Notes</a>
-        <a href="#news">Bibliography</a>
+        <a href="#recipe_index">Index</a>
+        <a href="#recipe_texts">Recipe Book</a>
+        <a href="#editorial_notes">Edition Notes</a>
+        <a href="#bibliography">Bibliography</a>
     </div>
     <!--end of navigation-->
 
