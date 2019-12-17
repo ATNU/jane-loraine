@@ -38,7 +38,9 @@
            };
        });
 
-
+function scrollToTop() {
+    $(xmlPanel).animate({scrollTop:0}, 100);
+}
 
     </script>
 </head>
@@ -51,6 +53,7 @@
 
     <!--navigation-->
     <div class="navbar">
+        <a onclick="scrollToTop()">Home</a>
         <div class="dropdown">
             <button class="dropbtn">General Introduction
                 <i class="fa fa-caret-down"></i>
@@ -82,11 +85,12 @@
     </div>
     <!--end of navigation-->
 
+<div id="contentBox">
 
     <div id="xmlPanel">
-        <!--                    <iframe src="2018_combined.xml" id="iframe_main" class="w3-signal-white w3-text-red"-->
-        <!--                            style="width:100%; height:72vh; border:none;"> </iframe>-->
+<!--        xml goes here-->
     </div>
 
+</div>
 </body>
 </html>
