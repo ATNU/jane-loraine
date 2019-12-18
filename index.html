@@ -12,83 +12,63 @@
     <script>
 
 
-       $(document).ready(function () {
+        $(document).ready(function () {
+            $(xmlPanel).load('htmlBook.html');
+        });
 
-           // read text from URL location
-           var request = new XMLHttpRequest();
-           request.open('GET', '2018_combined.xml', true);
-           request.send(null);
-           request.onreadystatechange = function () {
-               if (request.readyState === 4 && request.status === 200) {
-                   var type = request.getResponseHeader('Content-Type');
-                   if (type.indexOf("text") !== 1) {
-                       const xmlString = request.responseText.toString();
-
-                       // replace 'xml:id' with 'id' (required for scrolling to different locations)
-                       const xmlReplaced = xmlString.replace(/xml:id/g, 'id');
-
-                       // replace tei ref tag with html link tag
-                       const xmlReplaced2 = xmlReplaced.replace(/<ref/g, '<a');
-                       const xmlReplaced3 = xmlReplaced2.replace(/target=/g, 'href=');
-
-                       // display
-                       $(xmlPanel).append(xmlReplaced3);
-                   }
-               }
-           };
-       });
-
-function scrollToTop() {
-    $(xmlPanel).animate({scrollTop:0}, 100);
-}
+        function scrollToTop() {
+            $(xmlPanel).animate({scrollTop: 0}, 100);
+        }
 
     </script>
 </head>
 <body style="background: url(docs/Loraine28V.jpg); background-repeat: no-repeat; background-size: 100vw 100vh;">
 
 <header>
-    <h1>Jane Loraine's Recipe Book <small>(c.1684)</small></h1>
+    <h1>Jane Loraine's Recipe Book
+        <small>(c.1684)</small>
+    </h1>
 </header>
 
 
-    <!--navigation-->
-    <div class="navbar">
-        <a onclick="scrollToTop()">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">General Introduction
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#general_introduction_overview" >Overview</a>
-                <a href="#content">Content & Significance</a>
-                <a href="#author">Mystery of Jane Loraine</a>
-                <a href="#critical_field">Summary of the Critical Field</a>
-                <a href="#historical_context">Historical Content</a>
-            </div>
+<!--navigation-->
+<div class="navbar">
+    <a onclick="scrollToTop()"><img height="20px" src="home.png"></a>
+    <div class="dropdown">
+        <button class="dropbtn">General Introduction
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#general_introduction_overview">Overview</a>
+            <a href="#content">Content & Significance</a>
+            <a href="#author">Mystery of Jane Loraine</a>
+            <a href="#critical_field">Summary of the Critical Field</a>
+            <a href="#historical_context">Historical Content</a>
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">Textual Introduction
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#textual_introduction_overview">Overview</a>
-                <a href="#manuscript">The Manuscript</a>
-                <a href="#methodology">Methodology</a>
-                <a href="#transcription_conventions">Transcript Conventions</a>
-                <a href="#annotation">Rationale for Annotation</a>
-            </div>
-        </div>
-        <a href="#recipe_index">Index</a>
-        <a href="#recipe_texts">Recipe Book</a>
-        <a href="#editorial_notes">Edition Notes</a>
-        <a href="#bibliography">Bibliography</a>
     </div>
-    <!--end of navigation-->
+    <div class="dropdown">
+        <button class="dropbtn">Textual Introduction
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#textual_introduction_overview">Overview</a>
+            <a href="#manuscript">The Manuscript</a>
+            <a href="#methodology">Methodology</a>
+            <a href="#transcription_conventions">Transcript Conventions</a>
+            <a href="#annotation">Rationale for Annotation</a>
+        </div>
+    </div>
+    <a href="#recipe_index">Index</a>
+    <a href="#recipe_texts">Recipe Book</a>
+    <a href="#editorial_notes">Edition Notes</a>
+    <a href="#bibliography">Bibliography</a>
+</div>
+<!--end of navigation-->
 
 <div id="contentBox">
 
     <div id="xmlPanel">
-<!--        xml goes here-->
+        <!--        xml goes here-->
     </div>
 
 </div>
