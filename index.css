@@ -1,41 +1,38 @@
 /* Navbar container */
 .navbar {
     overflow: hidden;
-    background-color: #333;
-    font-family: Arial;
+    background-color: #646e83;
 }
 
 /* Links inside the navbar */
 .navbar a {
     float: left;
-    font-size: 16px;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Philosopher',Verdana,sans-serif;
+    color: #fdf5e6;
+    font-size: 18px;
 }
-
-/* The dropdown container */
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
 /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 18px;
     border: none;
     outline: none;
-    color: white;
+    color: #fdf5e6;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
 }
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }
 
 /* Dropdown content (hidden by default) */
@@ -47,89 +44,8 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-#xmlPanel {
-    height:72vh;
-    overflow: auto;
-    background-color: white;
-   margin: 10px;
-    font-family: 'Philosopher',Verdana,sans-serif;
-    line-height: 1.8;
-    font-size: large;
-}
-
-/*don't display title in xml panel*/
-#xmlPanel h1 {
-display:none;
-            }
-
-#contentBox {
-    background-color: black;
-}
-
-header {
-    color: #fdf5e6;
-    background-color: #1c1d22;
-    opacity: 0.6;
-    padding: 3px;
-    font-family: 'Philosopher',Verdana,sans-serif;
-    font-weight: 200;
-    font-size: larger;
-    padding-left: 20px;
-}
-
-footer {
-    background-color: #646e83;
-    color: #fdf5e6;
-    padding: 1px;
-    padding-left:20px;
-}
-
-footer h6 {
-    font-size: medium;
-}
-
-/* navbar styling */
-.navbar {
-    background-color: #646e83;
-  }
-
-.navbar a {
-    font-family: 'Philosopher',Verdana,sans-serif;
-    color: #fdf5e6;
-    font-size: larger;
-}
-
-.dropdown .dropbtn {
-    font-size: larger;
-}
-
-.dropdown-content a {
-    color: black;
-}
-
 .dropdown .dropbtn:hover {
-   background-color: darkblue;
+    background-color: darkblue;
 }
 
 .navbar a:hover {
@@ -148,9 +64,58 @@ footer h6 {
 .dropdown:hover .dropbtn {
     background-color: darkblue;
 }
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 
 
+
+
+#xmlPanel {
+    height:72vh;
+    overflow: auto;
+    background-color: white;
+   margin: 10px;
+    font-family: 'Philosopher',Verdana,sans-serif;
+    line-height: 1.8;
+    font-size:1em;
+}
+
+/*don't display title in xml panel*/
+#xmlPanel h1 {
+display:none;
+            }
+
+#contentBox {
+    background-color: black;
+    margin-bottom:0;
+}
+
+header {
+    color: #fdf5e6;
+    background-color: #1c1d22;
+    opacity: 0.6;
+    padding: 3px;
+    font-family: 'Philosopher',Verdana,sans-serif;
+    font-weight: 200;
+    font-size: larger;
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #646e83;
+    color: #fdf5e6;
+    padding:20px;
+opacity: 0.6;
+}
 
 /*Two column structure*/
 .column1 {
@@ -161,6 +126,10 @@ footer h6 {
 .column2 {
     float: right;
     width: 27%;
+}
+
+.row {
+    margin-bottom:0;
 }
 
 /* Clear floats after the columns */
@@ -191,6 +160,10 @@ a.link_ptr::after {
     content: "*";
     text-decoration: none;
     margin-right:5px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .figure > img {
