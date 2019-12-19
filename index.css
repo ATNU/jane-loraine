@@ -82,6 +82,47 @@
     background-color: black;
 }
 
+header {
+    color: #fdf5e6;
+    background-color: #1c1d22;
+    opacity: 0.6;
+    padding: 5px;
+}
+
+footer {
+    background-color: #646e83;
+    color: #fdf5e6;
+    padding: 5px;
+}
+
 .navbar {
-    background-color: #646e83!important;
+    background-color: #646e83;
+}
+
+/*Two column structure*/
+.column1 {
+    float: left;
+    width: 47%;
+}
+
+.column2 {
+    float: right;
+    width: 47%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#imageColumn {
+    background-color: white;
+}
+
+/*Overall width of display panel to give bootstrap-style central panel*/
+.container {
+    width:80%;
+    margin:auto;
 }

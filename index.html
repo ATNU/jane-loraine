@@ -5,7 +5,7 @@
     <title>MPD2 Sample Page</title>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="Index.css" rel="stylesheet"/>
+    <link href="index.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Philosopher|Philosopher:bold,italic,bolditalic"
           rel="stylesheet"/>
     <!--		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />-->
@@ -13,16 +13,17 @@
 
 
         $(document).ready(function () {
-            $(xmlPanel).load('htmlBook.html');
+            $(xmlPanel).load('loraineBook.html');
         });
-
         function scrollToTop() {
             $(xmlPanel).animate({scrollTop: 0}, 100);
         }
 
     </script>
 </head>
-<body style="background: url(docs/Loraine28V.jpg); background-repeat: no-repeat; background-size: 100vw 100vh;">
+<body style="background: url(Loraine28V.jpg); background-repeat: no-repeat; background-size: 100vw 100vh;">
+
+<div class="container">
 
 <header>
     <h1>Jane Loraine's Recipe Book
@@ -66,10 +67,25 @@
 <!--end of navigation-->
 
 <div id="contentBox">
-
+    <div class="row">
+<div class="column1">
     <div id="xmlPanel">
         <!--        xml goes here-->
     </div>
+</div>
+    <div class="column2" id="imageColumn">
+        <p>image column</p>
+<!--        image goes here-->
+    </div>
+
+
+    </div>
+</div>
+
+    <footer>
+        <div style="opacity: 1"><h6><i>Manuscript, Print, Digital 2018</i> | School of English Literature, Language and Linguistics | Newcastle University</h6></div>
+    </footer>
+
 
 </div>
 </body>
