@@ -192,3 +192,7 @@ a.link_ptr::after {
     text-decoration: none;
     margin-right:5px;
 }
+
+.figure > img {
+   max-width:100%;
+}
