@@ -5,6 +5,7 @@
     <title>MPD2 Sample Page</title>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <link href="index.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Philosopher|Philosopher:bold,italic,bolditalic"
           rel="stylesheet"/>
@@ -13,10 +14,78 @@
 
 
         $(document).ready(function () {
-            $(xmlPanel).load('loraineBook.html');
+            $(xmlPanel).load('loraine.html');
         });
+
         function scrollToTop() {
             $(xmlPanel).animate({scrollTop: 0}, 100);
+        }
+
+        //1. Waypoint approach:
+        // When user scrolls and a pagebreak comes into view, trigger an event and replace image with the next page's
+        // $('.pagebreak').waypoint(function() {
+        //     console.log('pagebreak passed');
+        // const imgPath = jQuery(this).find('a').attr('href');
+        //     // $('.imgPanel').attr('src', 'pages/' + imgPath);
+        // });
+
+        // 2. testing if element is on screen when user scrolls approach:
+        $.fn.isOnScreen = function () {
+
+            var win = $('#xmlPanel');
+
+            var viewport = {
+                top: win.scrollTop(),
+                left: win.scrollLeft()
+            };
+            viewport.right = viewport.left + win.width();
+            viewport.bottom = viewport.top + win.height();
+
+            var bounds = this.offset();
+            bounds.right = bounds.left + this.outerWidth();
+            bounds.bottom = bounds.top + this.outerHeight();
+
+            return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+        };
+
+        // This works for watching the whole window but not when you change it to xmlPanel
+        $('#xmlPanel').scroll(function () {
+                console.log('scroll');
+                if ($('.pagebreak').isOnScreen()) {
+                    console.log('pagebreak');
+                } else {
+                    console.log('no pagebreak');
+                }
+
+            }
+        );
+
+
+
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+        function GIDropdown() {
+            document.getElementById("GIDropdown").classList.toggle("show");
+        }
+
+        function TIDropdown() {
+            document.getElementById("GIDropdown").classList.toggle("show");
+        }
+
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
         }
 
     </script>
@@ -25,68 +94,72 @@
 
 <div class="container">
 
-<header>
-    <h1>Jane Loraine's Recipe Book
-        <small>(c.1684)</small>
-    </h1>
-</header>
+    <header>
+        <h1>Jane Loraine's Recipe Book
+            <small>(c.1684)</small>
+        </h1>
+    </header>
 
 
-<!--navigation-->
-<div class="navbar">
-    <a onclick="scrollToTop()"><img height="20px" src="home.png"></a>
-    <div class="dropdown">
-        <button class="dropbtn">General Introduction
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="#general_introduction_overview">Overview</a>
-            <a href="#content">Content & Significance</a>
-            <a href="#author">Mystery of Jane Loraine</a>
-            <a href="#critical_field">Summary of the Critical Field</a>
-            <a href="#historical_context">Historical Content</a>
+    <!--navigation-->
+    <div class="navbar">
+        <a onclick="scrollToTop()"><img height="20px" src="home.png"></a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="GIDropdown()">General Introduction
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="GIDropdown">
+                <a href="#general_introduction_overview">Overview</a>
+                <a href="#content">Content & Significance</a>
+                <a href="#author">Mystery of Jane Loraine</a>
+                <a href="#critical_field">Summary of the Critical Field</a>
+                <a href="#historical_context">Historical Content</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="TIDropdown()">Textual Introduction
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="TIDropdown">
+                <a href="#textual_introduction_overview">Overview</a>
+                <a href="#manuscript">The Manuscript</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#transcription_conventions">Transcript Conventions</a>
+                <a href="#annotation">Rationale for Annotation</a>
+            </div>
+        </div>
+        <a href="#recipe_index">Index</a>
+        <a href="#recipe_texts">Recipe Book</a>
+        <a href="#editorial_notes">Edition Notes</a>
+        <a href="#bibliography">Bibliography</a>
+    </div>
+    <!--end of navigation-->
+
+    <div id="contentBox">
+        <div class="row">
+            <div class="column1">
+                <div id="xmlPanel">
+                    <!--        xml goes here-->
+                </div>
+            </div>
+            <div class="column2" id="imageColumn">
+                <div id="imgPanel">
+                    <img src="">
+                </div>
+            </div>
+
+
         </div>
     </div>
-    <div class="dropdown">
-        <button class="dropbtn">Textual Introduction
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="#textual_introduction_overview">Overview</a>
-            <a href="#manuscript">The Manuscript</a>
-            <a href="#methodology">Methodology</a>
-            <a href="#transcription_conventions">Transcript Conventions</a>
-            <a href="#annotation">Rationale for Annotation</a>
-        </div>
-    </div>
-    <a href="#recipe_index">Index</a>
-    <a href="#recipe_texts">Recipe Book</a>
-    <a href="#editorial_notes">Edition Notes</a>
-    <a href="#bibliography">Bibliography</a>
-</div>
-<!--end of navigation-->
-
-<div id="contentBox">
-    <div class="row">
-<div class="column1">
-    <div id="xmlPanel">
-        <!--        xml goes here-->
-    </div>
-</div>
-    <div class="column2" id="imageColumn">
-        <p>image column</p>
-<!--        image goes here-->
-    </div>
-
-
-    </div>
-</div>
 
     <footer>
-        <div style="opacity: 1"><h6><i>Manuscript, Print, Digital 2018</i> | School of English Literature, Language and Linguistics | Newcastle University</h6></div>
+        <div style="opacity: 1"><h6><i>Manuscript, Print, Digital 2018</i> | School of English Literature, Language and
+            Linguistics | Newcastle University</h6></div>
     </footer>
 
 
 </div>
+<!--// <div class="pagebreak" id="index.xml-pb-d29e7460"><a href="Loraine3R.jpg">-->
+
 </body>
 </html>

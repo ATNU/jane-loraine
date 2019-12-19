@@ -72,11 +72,16 @@
     height:72vh;
     overflow: auto;
     background-color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+   margin: 10px;
+    font-family: 'Philosopher',Verdana,sans-serif;
+    line-height: 1.8;
+    font-size: large;
 }
+
+/*don't display title in xml panel*/
+#xmlPanel h1 {
+display:none;
+            }
 
 #contentBox {
     background-color: black;
@@ -86,28 +91,76 @@ header {
     color: #fdf5e6;
     background-color: #1c1d22;
     opacity: 0.6;
-    padding: 5px;
+    padding: 3px;
+    font-family: 'Philosopher',Verdana,sans-serif;
+    font-weight: 200;
+    font-size: larger;
+    padding-left: 20px;
 }
 
 footer {
     background-color: #646e83;
     color: #fdf5e6;
-    padding: 5px;
+    padding: 1px;
+    padding-left:20px;
 }
 
+footer h6 {
+    font-size: medium;
+}
+
+/* navbar styling */
 .navbar {
     background-color: #646e83;
+  }
+
+.navbar a {
+    font-family: 'Philosopher',Verdana,sans-serif;
+    color: #fdf5e6;
+    font-size: larger;
 }
+
+.dropdown .dropbtn {
+    font-size: larger;
+}
+
+.dropdown-content a {
+    color: black;
+}
+
+.dropdown .dropbtn:hover {
+   background-color: darkblue;
+}
+
+.navbar a:hover {
+    background-color: darkblue;
+}
+
+.dropdown-content a:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+.dropdown .dropbtn:visited {
+    background-color: darkblue;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: darkblue;
+}
+
+
+
 
 /*Two column structure*/
 .column1 {
     float: left;
-    width: 47%;
+    width: 67%;
 }
 
 .column2 {
     float: right;
-    width: 47%;
+    width: 27%;
 }
 
 /* Clear floats after the columns */
@@ -125,4 +178,17 @@ footer {
 .container {
     width:80%;
     margin:auto;
+}
+
+/*display links as '*' */
+a.link_ptr {
+  visibility:hidden;
+    font-size: xx-small;
+}
+a.link_ptr::after {
+    font-size: medium;
+    visibility: visible;
+    content: "*";
+    text-decoration: none;
+    margin-right:5px;
 }
