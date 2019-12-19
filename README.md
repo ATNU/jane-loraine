@@ -30,3 +30,5 @@ If there are new page images to add
 The sample website contained a date in the footer. This has currently been removed as it requires editing of the main HTML page. However, if 
 required, this can be added back into the footer section of the 'index.html' file. Instructions for editing a file in a Github repository can be foun d here: https://help.github.com/en/enterprise/2.18/user/managing-files-in-a-repository/editing-files-in-your-repository. 
 This is a straightforward change, but if the HTML file is edited incorrectly the website may error, so this is probably best done by someone who has written HTML before.
+
+
