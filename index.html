@@ -15,13 +15,41 @@
 
         $(document).ready(function () {
             $(xmlPanel).load('loraine.html');
+
+
+            setTimeout(function(){
+                // create waypoints for each element with a class pagebreak
+                $('.pagebreak').waypoint(function() {
+                    // when a waypoint is triggered, get the image name to display
+                    const el = $(this)[0]['element'];
+                    const a = el.getElementsByTagName('a');
+                    const url = a[0]['href'];
+                    // get image file name only (as images are stored in a directory)
+                    const imgName = url.replace('http://localhost:63342/jane-loraine/', '');
+                    // replace contents of the imgPanel with the image
+                    console.log(imgName);
+                    document.getElementById('pageImg').setAttribute('src', 'pages/' + imgName);
+                }, {
+                    // look for waypoints within the xmlPanel window
+                    context: document.getElementById('xmlPanel'),
+                    // change image when the waypoint is half way up the xml panel
+                    offest: '50%'
+                })
+
+            }, 500);
         });
+
+        // if an image can't be found just keep img panel blank
+        function imgError(image) {
+
+
+        }
 
         function scrollToTop() {
             $(xmlPanel).animate({scrollTop: 0}, 100);
         }
 
-        //1. Waypoint approach:
+        // 1. Waypoint approach:
         // When user scrolls and a pagebreak comes into view, trigger an event and replace image with the next page's
         // $('.pagebreak').waypoint(function() {
         //     console.log('pagebreak passed');
@@ -29,25 +57,29 @@
         //     // $('.imgPanel').attr('src', 'pages/' + imgPath);
         // });
 
-        // 2. testing if element is on screen when user scrolls approach:
-        $.fn.isOnScreen = function () {
 
-            var win = $('#xmlPanel');
 
-            var viewport = {
-                top: win.scrollTop(),
-                left: win.scrollLeft()
-            };
-            viewport.right = viewport.left + win.width();
-            viewport.bottom = viewport.top + win.height();
 
-            var bounds = this.offset();
-            bounds.right = bounds.left + this.outerWidth();
-            bounds.bottom = bounds.top + this.outerHeight();
 
-            return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-        };
+        // // 2. testing if element is on screen when user scrolls approach:
+        // $.fn.isOnScreen = function () {
+        //
+        //     var win = $('#xmlPanel');
+        //
+        //     var viewport = {
+        //         top: win.scrollTop(),
+        //         left: win.scrollLeft()
+        //     };
+        //     viewport.right = viewport.left + win.width();
+        //     viewport.bottom = viewport.top + win.height();
+        //
+        //     var bounds = this.offset();
+        //     bounds.right = bounds.left + this.outerWidth();
+        //     bounds.bottom = bounds.top + this.outerHeight();
+        //
+        //     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+        //
+        // };
 
         // This works for watching the whole window but not when you change it to xmlPanel
         $('#xmlPanel').scroll(function () {
@@ -144,7 +176,7 @@ toggle between hiding and showing the dropdown content */
             </div>
             <div class="column2" id="imageColumn">
                 <div id="imgPanel">
-                    <img src="">
+                    <img id="pageImg" src="">
                 </div>
             </div>
 
@@ -157,7 +189,10 @@ toggle between hiding and showing the dropdown content */
             Linguistics | Newcastle University
     </footer>
 
+<script>
 
+
+</script>
 </div>
 <!--// <div class="pagebreak" id="index.xml-pb-d29e7460"><a href="Loraine3R.jpg">-->
 

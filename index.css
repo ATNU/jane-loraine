@@ -125,7 +125,8 @@ opacity: 0.6;
 
 .column2 {
     float: right;
-    width: 27%;
+    width: 32%;
+    margin-right: 10px;
 }
 
 .row {
@@ -168,4 +169,9 @@ a {
 
 .figure > img {
    max-width:100%;
+}
+
+#pageImg {
+    max-width: 100%;
+    max-height: 100%;
 }

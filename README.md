@@ -20,6 +20,9 @@ Once an updated XML file with new student work is complete and checked, and has 
 4. Once uploaded, to save the changes you;ve made to the repository you need to press the green 'Commit changes' button, leaving any other settings as they are.
 5. You should then be able to navigate to the website and see the changes. If you can't see them straight away, try again in a couple of minutes, it can take time to update.
 
+## Page images
+Pages images scroll as the user scrolls through the recipe book text. There are currently a small number of missing pages:
+
 ## Instructions for adding new page images 
 If there are new page images to add:
 1. Navigate to the [Jane Loraine repository](https://github.com/ATNU/jane-loraine)
