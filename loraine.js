@@ -21,8 +21,7 @@ $(document).ready(function () {
         }, {
             // look for waypoints within the xmlPanel window
             context: document.getElementById('xmlPanel'),
-            // change image when the waypoint is half way up the xml panel
-            offest: '50%'
+
         })
 
     }, 500);
