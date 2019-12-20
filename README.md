@@ -9,7 +9,7 @@ The XML will be processed into HTML using XSLT before being inserted into the we
 directly from a repository. This is how the Jane Loraine project is hosted. You can view the website at:  [https://atnu.github.io/jane-loraine/] .
 
 ## XSLT processing
-The XML requires XSLT processing into HTML recognisable tags to be displayed. For the RSE-produced version of the website we used a TEI stylesheet built in to oXygen Editor. However a different stylesheet could be used in the future. The output of the 
+The XML requires XSLT processing into HTML recognisable tags to be displayed. The developers used a TEI stylesheet built in to oXygen Editor. However a different stylesheet could be used in the future. The output of the 
 processing should be an HTML file which must be called 'loraine.html'. This will contain the new additions and all previous year's work.
 
 ## Instructions for updating the website with new student work
