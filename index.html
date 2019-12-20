@@ -24,8 +24,10 @@
                     const el = $(this)[0]['element'];
                     const a = el.getElementsByTagName('a');
                     const url = a[0]['href'];
-                    // get image file name only (as images are stored in a directory)
-                    const imgName = url.replace('http://localhost:63342/jane-loraine/', '');
+                    // get image file name only (as images are stored in a directory) (for local and gitHub pages versions)
+                    const localName = url.replace('http://localhost:63342/jane-loraine/', '');
+                    const imgName = localName.replace('https://atnu.github.io/jane-loraine/', '');
+
                     // replace contents of the imgPanel with the image
                     console.log(imgName);
                     document.getElementById('pageImg').setAttribute('src', 'pages/' + imgName);
