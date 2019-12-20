@@ -22,6 +22,8 @@ Once an updated XML file with new student work is complete and checked, and has 
 4. Once uploaded, to save the changes you;ve made to the repository you need to press the green 'Commit changes' button, leaving any other settings as they are. 
 5. You should then be able to navigate to the website and see the changes. If you can't see them straight away, try again in a couple of minutes, it can take time to update. 
 
+If you can't see your changes, the time it takes for the site to update can vary, so try leaving it for 10 minutes and refreshing.
+
 ## To roll back to a previous file
 If something goes wrong in the above instructions, or you want to view a previous version, you can rename the file you want to use.
 1. If there is currently a file named 'loraine.html' that you no longer want to use or is not correct, follow step 2 above to rename this using whatever naming convention you wish.
