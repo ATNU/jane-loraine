@@ -1,7 +1,9 @@
 # Jane Loraine's Recipe Book
 This website has been created by the RSE team to display Jane Loraine's Recipe Book as transcribed by students.
-Each academic year students will transcribe more of the book and their work will be added to the website. The students will produce XML to be added to the previous year's XML file.
-The XML will be processed into HTML using XSLT before being inserted into the website. The website is styled using a CSS file (index.css). No additional frameworks have been used to make the styling as accessible as possible.
+Each academic year students will transcribe more of the book and their work will be added to the website. The students will produce TEI XML to be added to the previous year's XML file.
+The XML will be processed into HTML using XSLT before being inserted into the website. Whatever file is named 'loraine.html' will be used for the website, see instructions below.
+
+The website is styled using a CSS file (index.css). 
 
 ## GitHub pages
 [GitHub](https://github.com/) hosts repositories (folders) of code and is used by software developers for version control and sharing their code. The code for the Jane Loraine website is stored in a 
@@ -9,19 +11,21 @@ The XML will be processed into HTML using XSLT before being inserted into the we
 directly from a repository. This is how the Jane Loraine project is hosted. You can view the website at:  [https://atnu.github.io/jane-loraine/] .
 
 ## XSLT processing
-The XML requires XSLT processing into HTML recognisable tags to be displayed. For the RSE-produced version of the website we used a TEI stylesheet built in to oXygen Editor. However a different stylesheet could be used in the future. The output of the 
+The XML requires XSLT processing into HTML recognisable tags to be displayed. The developers used an oXygen Editor stylesheet for TEI XML. However a different stylesheet could be used in the future. The output of the 
 processing should be an HTML file which must be called 'loraine.html'. This will contain the new additions and all previous year's work.
 
 ## Instructions for updating the website with new student work
 Once an updated XML file with new student work is complete and checked, and has been processed using XSLT into HTML:
 1. Navigate to the Jane Loraine repository ([https://github.com/ATNU/jane-loraine]) in a browser. You will see the list of files and folders in the project.
-2. Click on the previous year's HTML file ('loraine.html') to open the file and click the rubbish bin symbol top right. Click on the green 'Commit changes' button to delete the file.
+2. Change the name of the previous year's HTML file by clicking on 'loraine.html', then click the pencil icon on the right hand side. Near the top of the page you will see 'jane-loraine/' in blue and then a box with 'loraine.html' in it. Click in this box and change it to 'loraine[YEAR].html' e.g. 'loraine2018.html'. This will preserve the previous version for future reference. Scroll to the bottom of the page and click the green 'Commit changes button'.
 3. Click 'Upload files', then 'choose your files' and select the new HTML file from your computer. This must be called 'loraine.html'. If this title is not the same, the website won't work. You'll see a progress bar appear (depending on how fast your internet upload speed is).
 4. Once uploaded, to save the changes you;ve made to the repository you need to press the green 'Commit changes' button, leaving any other settings as they are.
 5. You should then be able to navigate to the website and see the changes. If you can't see them straight away, try again in a couple of minutes, it can take time to update.
 
-## Page images
-Pages images scroll as the user scrolls through the recipe book text. There are currently a small number of missing pages:
+## To roll back to a previous file
+If something goes wrong in the above instructions, or you want to view a previous version, you can rename the file you want to use.
+1. If there is currently a file named 'loraine.html' that you no longer want to use or is not correct, follow step 2 above to rename this using whatever naming convention you wish.
+2. Select the HTML file you want to revert to, e.g. 'loraine2018.html' and follow step 2 above to rename it to 'loraine.html'. Once you have pressed the 'Commit changes' button, the website will update after a few moments.
 
 ## Instructions for adding new page images 
 If there are new page images to add:
