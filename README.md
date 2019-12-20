@@ -17,10 +17,10 @@ processing should be an HTML file which must be called 'loraine.html'. This will
 ## Instructions for updating the website with new student work
 Once an updated XML file with new student work is complete and checked, and has been processed using XSLT into HTML:
 1. Navigate to the Jane Loraine repository (https://github.com/ATNU/jane-loraine) in a browser. You will see the list of files and folders in the project.
-2. Change the name of the previous year's HTML file by clicking on 'loraine.html', then click the pencil icon on the right hand side. Near the top of the page you will see 'jane-loraine/' in blue and then a box with 'loraine.html' in it. Click in this box and change it to 'loraine[YEAR].html' e.g. 'loraine2018.html'. This will preserve the previous version for future reference. Scroll to the bottom of the page and click the green 'Commit changes button'.
-3. Click 'Upload files', then 'choose your files' and select the new HTML file from your computer. This must be called 'loraine.html'. If this title is not the same, the website won't work. You'll see a progress bar appear (depending on how fast your internet upload speed is).
-4. Once uploaded, to save the changes you;ve made to the repository you need to press the green 'Commit changes' button, leaving any other settings as they are.
-5. You should then be able to navigate to the website and see the changes. If you can't see them straight away, try again in a couple of minutes, it can take time to update.
+2. Change the name of the previous year's HTML file by clicking on 'loraine.html', then click the pencil icon on the right hand side. Near the top of the page you will see 'jane-loraine/' in blue and then a box with 'loraine.html' in it. Click in this box and change it to 'loraine[YEAR].html' e.g. 'loraine2018.html'. This will preserve the previous version for future reference. Scroll to the bottom of the page and click the green 'Commit changes button'. 
+3. Click 'Upload files', then 'choose your files' and select the new HTML file from your computer. This must be called 'loraine.html'. If this title is not the same, the website won't work. You'll see a progress bar appear (depending on how fast your internet upload speed is). 
+4. Once uploaded, to save the changes you;ve made to the repository you need to press the green 'Commit changes' button, leaving any other settings as they are. 
+5. You should then be able to navigate to the website and see the changes. If you can't see them straight away, try again in a couple of minutes, it can take time to update. 
 
 ## To roll back to a previous file
 If something goes wrong in the above instructions, or you want to view a previous version, you can rename the file you want to use.
