@@ -9,19 +9,19 @@
     <link href="index.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Philosopher|Philosopher:bold,italic,bolditalic"
           rel="stylesheet"/>
-    <!--		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />-->
     <script>
 
 
         $(document).ready(function () {
+            // load in the external HTML file once the page is ready
             $(xmlPanel).load('loraine.html');
 
-
-            setTimeout(function(){
+            // set a timeout so that waypoints aren't created before the HTML has loaded
+            setTimeout(function () {
                 // create waypoints for each element with a class pagebreak
-                $('.pagebreak').waypoint(function() {
+                $('.pagebreak').waypoint(function () {
                     // when a waypoint is triggered, get the image name to display
-                    console.log('waypoint triggered');
+                    console.log('waypoint triggered1');
                     const el = $(this)[0]['element'];
                     const a = el.getElementsByTagName('a');
                     const url = a[0]['href'];
@@ -47,22 +47,9 @@
             $(xmlPanel).animate({scrollTop: 0}, 100);
         }
 
-        // This works for watching the whole window but not when you change it to xmlPanel
-        $('#xmlPanel').scroll(function () {
-                console.log('scroll');
-                if ($('.pagebreak').isOnScreen()) {
-                    console.log('pagebreak');
-                } else {
-                    console.log('no pagebreak');
-                }
-
-            }
-        );
 
 
-
-        /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+        /* When the user clicks on the button, toggle between hiding and showing the dropdown content (required for touch screen devices)*/
         function GIDropdown() {
             document.getElementById("GIDropdown").classList.toggle("show");
         }
@@ -152,15 +139,14 @@ toggle between hiding and showing the dropdown content */
 
     <footer>
         <i>Manuscript, Print, Digital</i> | School of English Literature, Language and
-            Linguistics | Newcastle University
+        Linguistics | Newcastle University
     </footer>
 
-<script>
+    <script>
 
 
-</script>
+    </script>
 </div>
-<!--// <div class="pagebreak" id="index.xml-pb-d29e7460"><a href="Loraine3R.jpg">-->
 
 </body>
 </html>
