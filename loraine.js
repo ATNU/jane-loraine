@@ -8,7 +8,6 @@ $(document).ready(function () {
         // create waypoints for each element with a class pagebreak
         $('.pagebreak').waypoint(function () {
             // when a waypoint is triggered, get the image name to display
-            console.log('waypoint triggered2');
             const el = $(this)[0]['element'];
             const a = el.getElementsByTagName('a');
             const url = a[0]['href'];
